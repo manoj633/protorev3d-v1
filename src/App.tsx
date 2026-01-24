@@ -10,6 +10,12 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
+import ProductDesignDevelopment from "./pages/services/ProductDesignDevelopment";
+import ReverseEngineering from "./pages/services/ReverseEngineering";
+import FixtureToolingDesign from "./pages/services/FixtureToolingDesign";
+import TwoDToThreeDCNC from "./pages/services/TwoDToThreeDCNC";
+import GOMInspectionQuality from "./pages/services/GOMInspectionQuality";
+import ThreeDPrintingPrototyping from "./pages/services/ThreeDPrintingPrototyping";
 
 function Router() {
   // Scroll to top on route change
@@ -23,6 +29,27 @@ function Router() {
       <Route path="/services" component={Services} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route
+        path="/services/product-design-development"
+        component={ProductDesignDevelopment}
+      />
+      <Route
+        path="/services/reverse-engineering"
+        component={ReverseEngineering}
+      />
+      <Route
+        path="/services/fixture-tooling-design"
+        component={FixtureToolingDesign}
+      />
+      <Route path="/services/2d-to-3d-cnc" component={TwoDToThreeDCNC} />
+      <Route
+        path="services/gom-inspection-quality"
+        component={GOMInspectionQuality}
+      />
+      <Route
+        path="services/3d-printing-prototyping"
+        component={ThreeDPrintingPrototyping}
+      />
       <Route component={NotFound} />
     </Switch>
   );
