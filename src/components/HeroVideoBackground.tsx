@@ -1,4 +1,4 @@
-import heroImg from "@/assets/A photorealistic 3D perspective view of a precision aerospace fixture holding a single turbine blade of an aircraft engine mounted on a partial engine section. The turbine blade is metallic, aerodynamic, and highly.jpeg";
+import heroImg from "@/assets/turbine.jpeg";
 import ImageParallax from "@/components/ImageParallax";
 
 export function HeroVideoBackground() {
