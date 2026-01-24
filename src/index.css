@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Industrial / Metallic Palette */
+  --background: 220 20% 10%;      /* #14161a - Deep gunmetal */
+  --foreground: 220 20% 90%;      /* #e1e3e6 - Steel white */
+  
+  --primary: 210 100% 50%;        /* #0080ff - Electric Blue (Accents) */
+  --primary-foreground: 0 0% 100%;
+  
+  --muted: 220 15% 18%;           /* #272a30 - Machine parts */
+  --muted-foreground: 220 10% 60%; /* #93969b - Technical text */
+  
+  --card: 220 18% 13%;            /* #1b1e24 */
+  --card-foreground: 220 20% 90%;
+  
+  --border: 220 15% 25%;          /* #363b45 */
+  --input: 220 15% 20%;
+  
+  --ring: 210 100% 50%;
+  
+  --radius: 0px; /* Brutalist/Industrial - No rounded corners */
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-white;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight uppercase font-bold;
+  }
+  
+  /* Grid Background Effect */
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .font-mono-tech {
+    font-family: var(--font-mono);
+  }
+
+  /* Custom Scrollbar for that 'Terminal' feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border hover:bg-muted-foreground transition-colors;
+  }
+}
