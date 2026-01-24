@@ -13,10 +13,21 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 
+/* -------------------- IMAGE IMPORTS -------------------- */
+import productDesignImg from "@/assets/product-design-and-development.jpeg";
+import reverseEngineeringImg from "@/assets/reverse-engineering.jpeg";
+import fixtureToolingImg from "@/assets/fixture-tooling.jpeg";
+import cncConversionImg from "@/assets/2d-to-3d-cnc.jpeg";
+import inspectionImg from "@/assets/gom-inspection.jpeg";
+import printingImg from "@/assets/3d-printing-prototyping.jpeg";
+
+/* -------------------- SERVICES DATA -------------------- */
 const SERVICES = [
   {
+    slug: "product-design-development",
     icon: <Settings className="w-8 h-8 text-primary" />,
     title: "Product Design & Development",
+    image: productDesignImg,
     intro:
       "You have an idea, concept, or sketch but it is not ready for manufacturing.",
     problems: "Design rework, assembly issues, manufacturing delays.",
@@ -32,8 +43,10 @@ const SERVICES = [
       "Reduced errors, faster production readiness, lower development cost.",
   },
   {
+    slug: "reverse-engineering",
     icon: <Search className="w-8 h-8 text-primary" />,
     title: "Reverse Engineering",
+    image: reverseEngineeringImg,
     intro: "A physical part exists but no CAD or drawings are available.",
     problems:
       "OEM dependency, reproduction difficulty, inaccurate measurements.",
@@ -47,8 +60,10 @@ const SERVICES = [
     benefit: "Freedom from OEM dependency and secure long-term documentation.",
   },
   {
+    slug: "fixture-tooling-design",
     icon: <Wrench className="w-8 h-8 text-primary" />,
     title: "Fixture & Tooling Design",
+    image: fixtureToolingImg,
     intro:
       "Machining accuracy is inconsistent, or setups consume too much time.",
     problems: "Poor repeatability, quality variations, rework.",
@@ -58,8 +73,10 @@ const SERVICES = [
     benefit: "Improved accuracy, faster cycles, reduced scrap.",
   },
   {
+    slug: "2d-to-3d-cnc",
     icon: <Layers className="w-8 h-8 text-primary" />,
     title: "2D to 3D Conversion for CNC",
+    image: cncConversionImg,
     intro: "Only 2D drawings are available for CNC programming.",
     problems: "Ambiguous geometry and machining errors.",
     solution: "Conversion of 2D drawings into clear, CNC-ready 3D models.",
@@ -67,8 +84,10 @@ const SERVICES = [
     benefit: "Faster CAM programming and smoother machining.",
   },
   {
+    slug: "gom-inspection-quality",
     icon: <Ruler className="w-8 h-8 text-primary" />,
     title: "GOM Inspection & Quality Support",
+    image: inspectionImg,
     intro: "Parts need dimensional verification and quality documentation.",
     problems: "Unclear inspection results and repeated rejections.",
     solution: "Inspection-focused CAD comparison and GD&T evaluation.",
@@ -76,8 +95,10 @@ const SERVICES = [
     benefit: "Faster quality decisions and improved consistency.",
   },
   {
+    slug: "3d-printing-prototyping",
     icon: <Hexagon className="w-8 h-8 text-primary" />,
     title: "3D Printing & Prototyping",
+    image: printingImg,
     intro: "Designs need physical validation before production.",
     problems: "Unverified designs and costly tooling risks.",
     solution:
@@ -87,6 +108,7 @@ const SERVICES = [
   },
 ];
 
+/* -------------------- PAGE -------------------- */
 export default function Services() {
   return (
     <>
@@ -101,13 +123,13 @@ export default function Services() {
       <div className="pt-24 pb-24 min-h-screen bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div>
-            <SectionHeader
-              number="02"
-              title="Engineering Solutions for Real-World Challenges"
-              subtitle="Deploying advanced manufacturing protocols to solve complex hardware challenges."
-            />
-          </div>
+          <SectionHeader
+            number="02"
+            title="Engineering Solutions for Real-World Challenges"
+            subtitle="Deploying advanced manufacturing protocols to solve complex hardware challenges."
+          />
+
+          {/* Intro */}
           <div className="pb-12 px-6 max-w-7xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -122,67 +144,67 @@ export default function Services() {
                 receive and why it matters.
               </p>
               <p className="text-primary font-mono font-bold tracking-[0.2em] uppercase pb-12">
-                Jikan • Seimitsu • Paripoornathe <br className="md:hidden" />
+                Jikan • Seimitsu • Paripoornathe{" "}
                 <span className="text-slate-500 font-normal text-sm lowercase ml-2">
                   (Time • Precision • Perfection)
                 </span>
               </p>
             </motion.div>
 
+            {/* Services List */}
             <div className="grid grid-cols-1 gap-12">
               {SERVICES.map((service, index) => (
                 <motion.div
-                  key={index}
+                  key={service.slug}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  transition={{ delay: index * 0.08, duration: 0.5 }}
                   className="bg-slate-900 border border-white/5 p-8 md:p-12 hover:border-primary/30 transition-colors group relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 -mr-16 -mt-16 rotate-45 pointer-events-none" />
 
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    {/* Left */}
                     <div className="lg:col-span-4">
                       <div className="mb-6 bg-slate-950 w-16 h-16 flex items-center justify-center border border-white/10 group-hover:border-primary/50 transition-colors">
                         {service.icon}
                       </div>
+
                       <h3 className="text-3xl font-mono text-white mb-6 font-bold uppercase tracking-tight">
                         {service.title}
                       </h3>
-                      <div className="aspect-video bg-slate-950 border border-white/5 relative flex items-center justify-center overflow-hidden">
-                        <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-                        <span className="text-slate-700 font-mono text-xs uppercase">
-                          {service.title} Placeholder
-                        </span>
+
+                      <div className="aspect-video border border-white/5 overflow-hidden bg-slate-950">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover grayscale contrast-110 brightness-90 transition-transform duration-700 group-hover:scale-105"
+                        />
                       </div>
                     </div>
 
+                    {/* Right */}
                     <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
                       <div className="space-y-6">
-                        <div>
-                          <h4 className="text-primary font-mono text-xs uppercase tracking-widest mb-2 font-bold">
-                            When Customers Approach Us
-                          </h4>
-                          <p className="text-slate-300 leading-relaxed">
-                            {service.intro}
-                          </p>
-                        </div>
-                        <div>
-                          <h4 className="text-red-500/80 font-mono text-xs uppercase tracking-widest mb-2 font-bold">
-                            Problems Faced
-                          </h4>
-                          <p className="text-slate-400 leading-relaxed italic">
-                            {service.problems}
-                          </p>
-                        </div>
-                        <div>
-                          <h4 className="text-white font-mono text-xs uppercase tracking-widest mb-2 font-bold">
-                            Our Solution
-                          </h4>
-                          <p className="text-slate-200 leading-relaxed">
-                            {service.solution}
-                          </p>
-                        </div>
+                        <SectionBlock
+                          title="When Customers Approach Us"
+                          color="text-primary"
+                        >
+                          {service.intro}
+                        </SectionBlock>
+
+                        <SectionBlock
+                          title="Problems Faced"
+                          color="text-red-500/80"
+                          italic
+                        >
+                          {service.problems}
+                        </SectionBlock>
+
+                        <SectionBlock title="Our Solution" color="text-white">
+                          {service.solution}
+                        </SectionBlock>
                       </div>
 
                       <div className="space-y-6">
@@ -202,6 +224,7 @@ export default function Services() {
                             ))}
                           </ul>
                         </div>
+
                         <div className="bg-primary/5 border border-primary/10 p-4">
                           <h4 className="text-primary font-mono text-xs uppercase tracking-widest mb-2 font-bold">
                             Customer Benefit
@@ -210,6 +233,19 @@ export default function Services() {
                             {service.benefit}
                           </p>
                         </div>
+
+                        {/* View Detailed Service */}
+                        <div className="pt-4">
+                          <Link href={`/services/${service.slug}`}>
+                            <Button
+                              variant="outline"
+                              className="group font-mono uppercase tracking-widest text-xs border-primary/40 hover:border-primary hover:bg-primary/10"
+                            >
+                              View Detailed Service
+                              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -217,6 +253,7 @@ export default function Services() {
               ))}
             </div>
 
+            {/* CTA */}
             <div className="mt-20 border-t border-white/10 pt-20 text-center">
               <h2 className="text-3xl font-mono text-white mb-6">
                 Let’s Solve Your Engineering Challenge
@@ -232,5 +269,35 @@ export default function Services() {
         </div>
       </div>
     </>
+  );
+}
+
+/* -------------------- SMALL HELPER -------------------- */
+function SectionBlock({
+  title,
+  color,
+  children,
+  italic,
+}: {
+  title: string;
+  color: string;
+  children: React.ReactNode;
+  italic?: boolean;
+}) {
+  return (
+    <div>
+      <h4
+        className={`${color} font-mono text-xs uppercase tracking-widest mb-2 font-bold`}
+      >
+        {title}
+      </h4>
+      <p
+        className={`leading-relaxed ${
+          italic ? "italic text-slate-400" : "text-slate-300"
+        }`}
+      >
+        {children}
+      </p>
+    </div>
   );
 }
