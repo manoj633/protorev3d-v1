@@ -9,12 +9,6 @@ import { HeroVideoBackground } from "../components/HeroVideoBackground";
 import meetingImg from "@/assets/board-meeting-top-view-with-cad-sketch-on-table.jpeg";
 import ImageParallax from "@/components/ImageParallax";
 
-const stats = [
-  { label: "Precision", value: "±0.005mm" },
-  { label: "Turnaround", value: "24h Rapid" },
-  { label: "Materials", value: "40+ Metals" },
-];
-
 const features = [
   {
     title: "Jikan (Time)",
@@ -99,24 +93,6 @@ export default function Home() {
                   </Link>
                 </div>
               </motion.div>
-            </div>
-          </div>
-
-          {/* Stats Footer in Hero */}
-          <div className="absolute bottom-0 w-full border-t border-white/10 bg-background/50 backdrop-blur-sm z-10 hidden md:block">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-              <div className="flex justify-between items-center">
-                {stats.map((stat, idx) => (
-                  <div key={idx} className="flex flex-col">
-                    <span className="text-xs font-mono-tech text-muted-foreground uppercase tracking-widest">
-                      {stat.label}
-                    </span>
-                    <span className="text-xl font-bold text-white tracking-tight">
-                      {stat.value}
-                    </span>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
