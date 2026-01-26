@@ -28,11 +28,8 @@ export function Navigation() {
             <img
               src={protorevLogo}
               alt="PROTOREV"
-              className="h-8 md:h-10 object-contain"
+              className="h-14 md:h-16 object-contain"
             />
-            <span className="text-[10px] font-mono-tech text-muted-foreground tracking-[0.2em] uppercase">
-              Precision Engineering
-            </span>
           </Link>
 
           {/* Desktop Nav */}
