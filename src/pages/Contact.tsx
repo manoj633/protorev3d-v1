@@ -68,8 +68,11 @@ export default function Contact() {
 
             <div className="bg-card border border-white/10 p-8 space-y-8">
               <Info icon={<MapPin className="w-5 h-5" />} title="Location">
-                Bangalore, KA 560100
+                231/2, Ground Floor, 2nd Cross, Vidhana Soudha Layout,
+                Papareddypalya, D-Group Layout, 2nd Stage, Naagarabhaavi,
+                Bengaluru, Karnataka 560072
               </Info>
+
               <Info icon={<Phone className="w-5 h-5" />} title="Phone">
                 <a
                   href="tel:+919876543210"
@@ -78,6 +81,7 @@ export default function Contact() {
                   +91 98765 43210
                 </a>
               </Info>
+
               <Info
                 icon={<MessageCircle className="w-5 h-5 text-current" />}
                 title="WhatsApp"
@@ -101,20 +105,23 @@ export default function Contact() {
                 </a>
               </Info>
             </div>
+
+            {/* Map */}
             <div className="bg-card border border-white/10 overflow-hidden">
               <div className="h-64 w-full grayscale contrast-125 brightness-75">
                 <iframe
-                  title="Location Map"
-                  src="https://www.google.com/maps?q=12.9716,77.5946&z=13&output=embed"
-                  className="w-full h-full border-0"
+                  title="Office Location Map"
+                  src="https://www.google.com/maps?q=232,2nd+Cross,Vidhana+Soudha+Layout,Papareddypalya,D-Group+Layout,2nd+Stage,Naagarabhaavi,Bengaluru,Karnataka+560072&z=19&output=embed"
+                  width="100%"
+                  height="100%"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                />
+                ></iframe>
               </div>
 
               <div className="p-4 border-t border-white/10">
                 <p className="text-xs text-muted-foreground uppercase tracking-widest">
-                  Approximate Location (Demo)
+                  Registered Office Location
                 </p>
               </div>
             </div>
