@@ -33,13 +33,11 @@ export default function About() {
           </div>
 
           <div className="relative h-96 border border-white/10 bg-card overflow-hidden">
-            {/* Abstract grid representation of a factory floor */}
             <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]" />
             <div className="absolute inset-0 flex items-center justify-center">
               <Factory className="w-32 h-32 text-white/10" strokeWidth={0.5} />
             </div>
 
-            {/* Data overlay */}
             <div className="absolute bottom-4 left-4 font-mono-tech text-xs text-primary space-y-1">
               <div>FACILITY_ID: PR_BLR_01</div>
               <div>AREA: 12,000 SQ.FT</div>
@@ -48,7 +46,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* The Team / Logic */}
+        {/* Operational Units */}
         <h3 className="text-2xl font-bold text-white uppercase mb-12 border-b border-white/10 pb-4">
           Operational Units
         </h3>
@@ -60,39 +58,82 @@ export default function About() {
               role: "CAD / CAM / CAE",
               icon: Ruler,
               desc: "Responsible for parametric modeling and simulation.",
+              status: "operational",
             },
             {
               title: "Production Unit",
               role: "CNC / Additive",
               icon: Cog,
               desc: "Responsible for physical realization and machining.",
+              status: "upcoming",
             },
             {
               title: "Quality Unit",
               role: "CMM / Inspection",
-              icon: Users, // using Users as generic 'team' icon
+              icon: Users,
               desc: "Responsible for verification and final approval.",
+              status: "upcoming",
             },
           ].map((unit, idx) => (
             <motion.div
               key={idx}
-              whileHover={{ y: -5 }}
-              className="bg-card border border-white/5 p-8 group hover:border-primary/50 transition-all duration-300"
+              whileHover={unit.status === "operational" ? { y: -5 } : undefined}
+              className={`relative p-8 transition-all duration-300
+                ${
+                  unit.status === "operational"
+                    ? "bg-card border border-white/5 hover:border-primary/50"
+                    : "bg-card/40 border border-dashed border-white/20 opacity-70"
+                }`}
             >
-              <unit.icon className="w-8 h-8 text-primary mb-6" />
-              <h4 className="text-xl font-bold text-white uppercase mb-1">
+              {/* Status badge */}
+              <span
+                className={`absolute top-4 right-4 text-[10px] uppercase tracking-widest font-mono-tech px-2 py-0.5 border
+                  ${
+                    unit.status === "operational"
+                      ? "border-primary/40 text-primary"
+                      : "border-white/20 text-white/40"
+                  }`}
+              >
+                {unit.status === "operational" ? "Operational" : "Coming Up"}
+              </span>
+
+              <unit.icon
+                className={`w-8 h-8 mb-6
+                  ${
+                    unit.status === "operational"
+                      ? "text-primary"
+                      : "text-white/40"
+                  }`}
+              />
+
+              <h4
+                className={`text-xl font-bold uppercase mb-1
+                  ${
+                    unit.status === "operational"
+                      ? "text-white"
+                      : "text-white/60"
+                  }`}
+              >
                 {unit.title}
               </h4>
-              <span className="text-xs font-mono-tech text-primary/80 uppercase tracking-widest block mb-4">
+
+              <span
+                className={`text-xs font-mono-tech uppercase tracking-widest block mb-4
+                  ${
+                    unit.status === "operational"
+                      ? "text-primary/80"
+                      : "text-white/40"
+                  }`}
+              >
                 {unit.role}
               </span>
+
               <p className="text-sm text-muted-foreground">{unit.desc}</p>
             </motion.div>
           ))}
         </div>
 
-        {/* Timeline / History */}
-        {/* Timeline / History */}
+        {/* Timeline / History (unchanged) */}
         <div className="mt-32">
           <h3 className="text-2xl font-bold text-white uppercase mb-12 border-b border-white/10 pb-4">
             System Logs
@@ -129,45 +170,46 @@ export default function About() {
                 viewport={{ once: true }}
                 className="relative"
               >
-                {/* Timeline node */}
                 <span
                   className={`absolute -left-[37px] top-1 w-4 h-4 rounded-full border
-            ${
-              log.status === "completed"
-                ? "bg-primary border-primary"
-                : "bg-background border-white/30"
-            }`}
+                    ${
+                      log.status === "completed"
+                        ? "bg-primary border-primary"
+                        : "bg-background border-white/30"
+                    }`}
                 />
 
-                {/* Year + status */}
                 <div className="flex items-center gap-4">
                   <span
                     className={`font-mono-tech font-bold text-lg tracking-widest
-              ${log.status === "completed" ? "text-primary" : "text-white/50"}`}
+                      ${
+                        log.status === "completed"
+                          ? "text-primary"
+                          : "text-white/50"
+                      }`}
                   >
                     {log.year}
                   </span>
 
                   <span
                     className={`text-[10px] uppercase tracking-wider px-2 py-0.5 border font-mono-tech
-              ${
-                log.status === "completed"
-                  ? "border-primary/40 text-primary"
-                  : "border-white/20 text-white/40"
-              }`}
+                      ${
+                        log.status === "completed"
+                          ? "border-primary/40 text-primary"
+                          : "border-white/20 text-white/40"
+                      }`}
                   >
                     {log.status === "completed" ? "Completed" : "Planned"}
                   </span>
                 </div>
 
-                {/* Event text */}
                 <p
                   className={`mt-2 max-w-xl
-            ${
-              log.status === "completed"
-                ? "text-muted-foreground"
-                : "text-white/40"
-            }`}
+                    ${
+                      log.status === "completed"
+                        ? "text-muted-foreground"
+                        : "text-white/40"
+                    }`}
                 >
                   {log.event}
                 </p>
