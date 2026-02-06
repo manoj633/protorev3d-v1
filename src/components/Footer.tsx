@@ -12,7 +12,7 @@ export function Footer() {
                 PROTOREV
               </span>
               <span className="text-[10px] font-mono-tech text-muted-foreground tracking-widest uppercase mt-1">
-                Precision • Speed • Perfection
+                Time • Precision • Perfection
               </span>
             </div>
             <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
