@@ -233,7 +233,7 @@ export default function About() {
         {/* System Logs */}
         <section>
           <h3 className="text-2xl font-bold text-white uppercase mb-12 border-b border-white/10 pb-4">
-            System Logs
+            Timeline
           </h3>
 
           <div className="space-y-12 border-l border-white/10 ml-4 pl-8 relative">
