@@ -61,7 +61,17 @@ export default function Home() {
                   </span>
                 </div>
 
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-[0.9] drop-shadow-[0_6px_30px_rgba(0,0,0,0.9)] letter-spacing: -0.02em;">
+                <h1
+                  className="text-4xl
+  sm:text-5xl
+  md:text-7xl
+  lg:text-8xl
+  font-bold
+  tracking-tighter
+  text-white
+  leading-tight
+  drop-shadow-[0_6px_30px_rgba(0,0,0,0.9)]letter-spacing: -0.02em;"
+                >
                   Engineered <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-white/50">
                     Perfection
@@ -117,7 +127,7 @@ export default function Home() {
         </section>
 
         {/* WHO WE ARE SECTION */}
-        <section className="py-24 bg-card relative border-t border-white/5">
+        <section className="py-16 sm:py-24 bg-card relative border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               number="01"
@@ -192,7 +202,7 @@ export default function Home() {
         </section>
 
         {/* SERVICES OVERVIEW SECTION */}
-        <section className="py-24 bg-background relative border-t border-white/5">
+        <section className="py-16 sm:py-24 bg-background relative border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               number="02"
@@ -215,7 +225,7 @@ export default function Home() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="group p-8 border border-white/10 bg-card hover:border-primary/50 transition-all duration-300 relative overflow-hidden"
+                  className="group p-6 sm:p-8 border border-white/10 bg-card hover:border-primary/50 transition-all duration-300 relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
                     <service.icon className="w-16 h-16" />
@@ -243,7 +253,7 @@ export default function Home() {
         </section>
 
         {/* HOW WE WORK SECTION */}
-        <section className="py-24 bg-card relative border-t border-white/5">
+        <section className="py-16 sm:py-24 bg-card relative border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               number="03"
@@ -252,7 +262,7 @@ export default function Home() {
             />
 
             <div className="mt-12 relative">
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-primary/20 hidden md:block" />
+              <div className="relative flex items-center gap-4 sm:gap-8 top-0 bottom-0 w-[1px] bg-primary/20 hidden md:block" />
 
               <div className="space-y-12">
                 {[
@@ -288,7 +298,7 @@ export default function Home() {
         </section>
 
         {/* WHO WE SUPPORT SECTION */}
-        <section className="py-24 bg-background relative border-t border-white/5">
+        <section className="py-16 sm:py-24 bg-background relative border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <SectionHeader
               number="04"
@@ -301,7 +311,7 @@ export default function Home() {
                 <ImageParallax
                   src={meetingImg}
                   alt="Board meeting with CAD sketches"
-                  className="w-full h-64 md:h-full"
+                  className="w-full h-64 md:h-full transform-none md:transform"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10" />
                 <div className="absolute left-4 bottom-4 z-10 text-white">
@@ -341,7 +351,7 @@ export default function Home() {
         </section>
 
         {/* EARLY-STAGE TRANSPARENCY SECTION */}
-        <section className="py-24 bg-card relative border-t border-white/5">
+        <section className="py-16 sm:py-24 bg-card relative border-t border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>

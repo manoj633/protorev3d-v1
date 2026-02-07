@@ -120,7 +120,7 @@ export default function Services() {
         />
       </Helmet>
 
-      <div className="pt-24 pb-24 min-h-screen bg-background">
+      <div className="pt-16 pb-16 sm:pt-24 sm:pb-24 min-h-screen bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <SectionHeader
@@ -137,7 +137,17 @@ export default function Services() {
               transition={{ duration: 0.6 }}
             >
               <div className="h-1 w-20 bg-primary mb-8"></div>
-              <p className="text-xl text-slate-300 max-w-3xl leading-relaxed mb-6">
+              <p
+                className="
+  text-base
+  sm:text-lg
+  md:text-xl
+  text-slate-300
+  max-w-3xl
+  leading-relaxed
+  mb-6
+"
+              >
                 Every service we offer begins with a real manufacturing or
                 design problem. Our focus is on clarity, accuracy, and
                 manufacturability — so customers clearly understand what they
@@ -160,18 +170,41 @@ export default function Services() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08, duration: 0.5 }}
-                  className="bg-slate-900 border border-white/5 p-8 md:p-12 hover:border-primary/30 transition-colors group relative overflow-hidden"
+                  className="
+  bg-slate-900
+  border border-white/5
+  p-6
+  sm:p-8
+  md:p-12
+  hover:border-primary/30
+  transition-colors
+  group
+  relative
+  overflow-hidden
+"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 -mr-16 -mt-16 rotate-45 pointer-events-none" />
 
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
                     {/* Left */}
                     <div className="lg:col-span-4">
                       <div className="mb-6 bg-slate-950 w-16 h-16 flex items-center justify-center border border-white/10 group-hover:border-primary/50 transition-colors">
                         {service.icon}
                       </div>
 
-                      <h3 className="text-3xl font-mono text-white mb-6 font-bold uppercase tracking-tight">
+                      <h3
+                        className="
+  text-xl
+  sm:text-2xl
+  md:text-3xl
+  font-mono
+  text-white
+  mb-4 sm:mb-6
+  font-bold
+  uppercase
+  tracking-tight
+"
+                      >
                         {service.title}
                       </h3>
 
@@ -185,7 +218,15 @@ export default function Services() {
                     </div>
 
                     {/* Right */}
-                    <div className="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div
+                      className="
+  lg:col-span-8
+  grid
+  grid-cols-1
+  md:grid-cols-2
+  gap-6 sm:gap-8
+"
+                    >
                       <div className="space-y-6">
                         <SectionBlock
                           title="When Customers Approach Us"
@@ -239,10 +280,30 @@ export default function Services() {
                           <Link href={`/services/${service.slug}`}>
                             <Button
                               variant="outline"
-                              className="group font-mono uppercase tracking-widest text-xs border-primary/40 hover:border-primary hover:bg-primary/10"
+                              className="
+    group
+    font-mono
+    uppercase
+    tracking-wider sm:tracking-widest
+    text-xs
+    border-primary/40
+    hover:border-primary
+    hover:bg-primary/10
+    flex
+    items-center
+    justify-center
+    gap-2
+    text-center
+    whitespace-normal
+    px-4 sm:px-6
+    py-3
+    min-h-[48px]
+  "
                             >
-                              View Detailed Service
-                              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                              <span className="block leading-tight">
+                                View Detailed Service
+                              </span>
+                              <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
                             </Button>
                           </Link>
                         </div>
@@ -254,14 +315,31 @@ export default function Services() {
             </div>
 
             {/* CTA */}
-            <div className="mt-20 border-t border-white/10 pt-20 text-center">
-              <h2 className="text-3xl font-mono text-white mb-6">
+            <div className="mt-12 sm:mt-20 border-t border-white/10 pt-12 sm:pt-20 text-center">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-mono text-white mb-6">
                 Let’s Solve Your Engineering Challenge
               </h2>
               <Link href="/contact">
-                <Button size="lg" className="group px-12">
-                  Discuss Your Requirement
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <Button
+                  size="lg"
+                  className="
+    group
+    inline-flex
+    items-center
+    justify-center
+    gap-2
+    px-6 sm:px-12
+    py-3
+    min-h-[48px]
+    text-center
+    whitespace-normal sm:whitespace-nowrap
+    w-full sm:w-auto
+  "
+                >
+                  <span className="block leading-tight sm:leading-none text-center">
+                    Discuss Your Requirement
+                  </span>
+                  <ArrowRight className="w-4 h-4 shrink-0 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
@@ -292,9 +370,11 @@ function SectionBlock({
         {title}
       </h4>
       <p
-        className={`leading-relaxed ${
-          italic ? "italic text-slate-400" : "text-slate-300"
-        }`}
+        className={`
+    text-sm sm:text-base
+    leading-relaxed
+    ${italic ? "italic text-slate-400" : "text-slate-300"}
+  `}
       >
         {children}
       </p>

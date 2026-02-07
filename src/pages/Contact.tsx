@@ -41,9 +41,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-28 pb-28 min-h-screen bg-background relative overflow-hidden">
+    <div className="pt-16 pb-16 sm:pt-28 sm:pb-28 min-h-screen bg-background relative overflow-hidden">
       {/* Subtle industrial accent */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-20 pointer-events-none" />
+      <div className="hidden sm:block absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-20 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         <SectionHeader
@@ -52,21 +52,34 @@ export default function Contact() {
           subtitle="Serious engineering begins with clear communication."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 mt-16">
+        <div
+          className="
+  grid grid-cols-1 lg:grid-cols-2
+  gap-12 sm:gap-16 lg:gap-20
+  mt-12 sm:mt-16
+"
+        >
           {/* Left: Context + Contact Info */}
           <div className="space-y-12">
             <div className="space-y-6 max-w-md">
-              <h3 className="text-xl font-bold uppercase tracking-wider text-white">
+              <h3 className="text-lg sm:text-xl font-bold uppercase tracking-wider text-white">
                 Start a Technical Conversation
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 Whether you’re exploring feasibility, reverse engineering an
                 existing component, or preparing for manufacturing — provide as
                 much context as you can. Our engineers review every inquiry.
               </p>
             </div>
 
-            <div className="bg-card border border-white/10 p-8 space-y-8">
+            <div
+              className="
+  bg-card
+  border border-white/10
+  p-6 sm:p-8
+  space-y-6 sm:space-y-8
+"
+            >
               <Info icon={<MapPin className="w-5 h-5" />} title="Location">
                 231/2, Ground Floor, 2nd Cross, Vidhana Soudha Layout,
                 Papareddypalya, D-Group Layout, 2nd Stage, Naagarabhaavi,
@@ -108,7 +121,7 @@ export default function Contact() {
 
             {/* Map */}
             <div className="bg-card border border-white/10 overflow-hidden">
-              <div className="h-64 w-full">
+              <div className="h-48 sm:h-64 w-full">
                 <iframe
                   title="Office Location Map"
                   src="https://www.google.com/maps?q=12.9708391,77.5034595&z=19&output=embed"
@@ -129,8 +142,15 @@ export default function Contact() {
           </div>
 
           {/* Right: Form */}
-          <div className="bg-card border border-white/10 p-8 md:p-12 shadow-2xl">
-            <h3 className="text-2xl font-bold text-white uppercase mb-2">
+          <div
+            className="
+  bg-card
+  border border-white/10
+  p-6 sm:p-8 md:p-12
+  shadow-2xl
+"
+          >
+            <h3 className="text-xl sm:text-2xl font-bold text-white uppercase mb-2">
               Project Inquiry
             </h3>
             <p className="text-sm text-muted-foreground mb-8">
@@ -168,7 +188,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={submitMutation.isPending}
-                  className="w-full rounded-none h-14 uppercase tracking-widest"
+                  className="w-full rounded-none min-h-[48px] h-12 sm:h-14 uppercase tracking-widest"
                 >
                   {submitMutation.isPending ? (
                     <span className="flex gap-2 items-center">
@@ -196,8 +216,8 @@ export default function Contact() {
 /* Small helpers */
 function Info({ icon, title, children }: any) {
   return (
-    <div className="flex items-start space-x-6">
-      <div className="text-primary mt-1">{icon}</div>
+    <div className="flex items-start space-x-4 sm:space-x-6">
+      <div className="text-primary mt-0.5 sm:mt-1">{icon}</div>
       <div>
         <h4 className="font-bold uppercase tracking-wider mb-2">{title}</h4>
         <p className="text-muted-foreground text-sm">{children}</p>
@@ -220,7 +240,7 @@ function ContactField({ name, label, placeholder, textarea }: any) {
               <Textarea
                 {...field}
                 placeholder={placeholder}
-                className="min-h-[150px]"
+                className="min-h-[120px] sm:min-h-[150px]"
               />
             ) : (
               <Input {...field} placeholder={placeholder} />

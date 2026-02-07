@@ -12,7 +12,7 @@ import {
 
 export default function About() {
   return (
-    <div className="pt-24 pb-24 min-h-screen bg-background">
+    <div className="pt-16 pb-16 sm:pt-24 sm:pb-24 min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           number="03"
@@ -21,8 +21,22 @@ export default function About() {
         />
 
         {/* Mission Statement */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-40 items-center">
-          <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
+        <section
+          className="
+  grid grid-cols-1 lg:grid-cols-2
+  gap-8 sm:gap-12 lg:gap-16
+  mb-20 sm:mb-40
+  items-center
+"
+        >
+          <div
+            className="
+  space-y-4 sm:space-y-6
+  text-sm sm:text-base md:text-lg
+  text-muted-foreground
+  leading-relaxed
+"
+          >
             <p>
               <strong className="text-white">PROTOREV</strong> was founded on a
               simple observation: the gap between digital design and physical
@@ -44,7 +58,7 @@ export default function About() {
             <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%,transparent_100%)] bg-[length:20px_20px]" />
             <div className="absolute inset-0 flex items-center justify-center">
               <Factory
-                className="w-28 h-28 text-white/10"
+                className="w-20 h-20 sm:w-28 sm:h-28 text-white/10"
                 strokeWidth={0.5}
                 aria-hidden
               />
@@ -59,7 +73,14 @@ export default function About() {
         </section>
 
         {/* Vision · Mission · Core Values */}
-        <section className="mb-40 bg-card/30 py-24 px-6 sm:px-10">
+        <section
+          className="
+  mb-20 sm:mb-40
+  bg-card/30
+  py-12 sm:py-24
+  px-4 sm:px-6 md:px-10
+"
+        >
           <h3 className="text-2xl font-bold text-white uppercase mb-16 border-b border-white/10 pb-4">
             Vision · Mission · Core Values
           </h3>
@@ -71,7 +92,14 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="p-10 bg-card border border-white/10 hover:border-primary/50 transition-all shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]"
+              className="
+  p-6 sm:p-8 md:p-10
+  bg-card
+  border border-white/10
+  hover:border-primary/50
+  transition-all
+  shadow-[inset_0_0_0_1px_rgba(255,255,255,0.04)]
+"
             >
               <Telescope className="w-7 h-7 text-primary/80 mb-6" aria-hidden />
               <h4 className="text-xl font-bold uppercase text-white mb-4">
@@ -135,16 +163,22 @@ export default function About() {
                 key={idx}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.25 }}
-                className="p-8 bg-card border border-white/5 hover:border-primary/40 transition-all"
+                className="
+  p-6 sm:p-8
+  bg-card
+  border border-white/5
+  hover:border-primary/40
+  transition-all
+"
               >
                 <CheckCircle
                   className="w-4 h-4 text-primary/70 mb-4"
                   aria-hidden
                 />
-                <h5 className="text-sm font-bold uppercase tracking-wide text-white mb-2">
+                <h5 className="text-xs sm:text-sm font-bold uppercase tracking-wide text-white mb-2">
                   CV-{String(idx + 1).padStart(2, "0")} · {value.title}
                 </h5>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {value.desc}
                 </p>
               </motion.div>
@@ -153,7 +187,7 @@ export default function About() {
         </section>
 
         {/* Operational Units */}
-        <section className="mb-40">
+        <section className="mb-20 sm:mb-40">
           <h3 className="text-2xl font-bold text-white uppercase mb-12 border-b border-white/10 pb-4">
             Operational Units
           </h3>
@@ -236,7 +270,15 @@ export default function About() {
             Timeline
           </h3>
 
-          <div className="space-y-12 border-l border-white/10 ml-4 pl-8 relative">
+          <div
+            className="
+  space-y-8 sm:space-y-12
+  border-l border-white/10
+  ml-2 sm:ml-4
+  pl-4 sm:pl-8
+  relative
+"
+          >
             {[
               {
                 year: "2038",
@@ -278,7 +320,7 @@ export default function About() {
 
                 <div className="flex items-center gap-4">
                   <span
-                    className={`font-mono-tech font-bold text-lg tracking-widest
+                    className={`font-mono-tech font-bold text-sm sm:text-lg tracking-widest
                       ${
                         log.status === "completed"
                           ? "text-primary"
