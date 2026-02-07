@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import protorevLogo from "@/assets/protorev.png";
 
 export function Footer() {
   return (
@@ -10,7 +11,13 @@ export function Footer() {
           <div className="md:col-span-2 space-y-4">
             <div className="flex flex-col">
               <span className="text-xl font-bold tracking-tighter text-white">
-                PROTOREV
+              <Link href="/" className="cursor-pointer">
+            <img
+              src={protorevLogo}
+              alt="PROTOREV"
+              className="h-14 md:h-16 object-contain"
+            />
+          </Link>
               </span>
               <span className="text-[10px] font-mono-tech text-muted-foreground tracking-widest uppercase mt-1">
                 Time • Precision • Perfection
