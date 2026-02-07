@@ -39,7 +39,7 @@ export default function Home() {
       </Helmet>
       <div className="flex flex-col min-h-screen">
         {/* HERO SECTION */}
-        <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-background">
+        <section className="relative min-h-screen sm:h-screen w-full flex items-center justify-center overflow-hidden bg-background">
           <div className="absolute inset-0 bg-grid-pattern opacity-20 pointer-events-none" />
 
           {/* 3D Canvas Layer */}
@@ -48,7 +48,7 @@ export default function Home() {
 
           {/* Content Layer */}
           <div className="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pointer-events-none">
-            <div className="max-w-3xl pointer-events-auto bg-black/40 backdrop-blur-sm p-6 rounded-md">
+            <div className="max-w-3xl pointer-events-auto bg-black/40 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-md">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -67,12 +67,13 @@ export default function Home() {
                     Perfection
                   </span>
                 </h1>
-                <p className="mt-8 text-lg md:text-xl text-white/90 max-w-lg border-l-2 border-primary pl-6 font-mono-tech drop-shadow-lg">
+                <p className="mt-6 sm:mt-8 text-base sm:text-lg md:text-xl text-white/90 max-w-lg border-l-2 border-primary pl-6 font-mono-tech drop-shadow-lg">
                   Advanced reverse engineering & rapid prototyping for the next
                   generation of industrial manufacturing.
                 </p>
 
-                <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 items-center sm:items-start">
+                  {" "}
                   <Link href="/services">
                     <Button
                       size="lg"
@@ -85,10 +86,28 @@ export default function Home() {
                     <Button
                       size="lg"
                       variant="outline"
-                      className="rounded-none h-14 px-8 text-base border-white/20 hover:bg-white/5 hover:text-white uppercase tracking-widest font-bold font-mono-tech"
+                      className="
+    rounded-none
+    h-auto
+    px-6 sm:px-8
+    py-3
+    text-sm sm:text-base
+    border-white/20
+    hover:bg-white/5 hover:text-white
+    uppercase
+    tracking-wider sm:tracking-widest
+    font-bold font-mono-tech
+    flex
+    items-center
+    gap-2
+    text-center
+    whitespace-normal
+  "
                     >
-                      Discuss your project{" "}
-                      <ArrowRight className="ml-2 w-4 h-4" />
+                      <span className="block leading-tight">
+                        Discuss your project
+                      </span>
+                      <ArrowRight className="w-4 h-4 shrink-0" />
                     </Button>
                   </Link>
                 </div>
@@ -346,8 +365,26 @@ export default function Home() {
                     we're ready to support you.
                   </p>
                   <Link href="/contact">
-                    <Button className="mt-4 rounded-none h-12 px-8 bg-white text-black hover:bg-gray-200 uppercase tracking-widest font-bold text-xs">
-                      Discuss Your Project
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="
+    rounded-none
+    h-14
+    px-6 sm:px-8
+    text-sm sm:text-base
+    border-white/20
+    hover:bg-white/5 hover:text-white
+    uppercase tracking-wider sm:tracking-widest
+    font-bold font-mono-tech
+    w-full sm:w-auto
+    justify-center
+  "
+                    >
+                      <span className="whitespace-normal text-center">
+                        Discuss your project
+                      </span>
+                      <ArrowRight className="ml-2 w-4 h-4 shrink-0" />
                     </Button>
                   </Link>
                 </div>

@@ -5,7 +5,12 @@ export function HeroVideoBackground() {
     <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
       {/* Video layer */}
       <video
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0
+    w-full
+    h-full
+    object-cover
+    min-h-[100svh]
+    sm:min-h-full"
         src={heroVideo}
         autoPlay
         muted
@@ -15,16 +20,23 @@ export function HeroVideoBackground() {
       />
 
       {/* Dark industrial overlay (contrast tuning) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-black/70" />
+      <div
+        className="
+  absolute inset-0
+  bg-gradient-to-b
+  from-black/40 via-black/30 to-black/60
+  sm:from-black/60 sm:via-black/45 sm:to-black/70
+"
+      />
 
       {/* Vignette */}
       <div
-        className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse at center, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%)",
+            "radial-gradient(ellipse at center, rgba(0,0,0,0) 55%, rgba(0,0,0,0.45) 100%)",
           mixBlendMode: "multiply",
         }}
+        className="sm:opacity-100 opacity-70"
       />
 
       {/* Subtle noise texture */}
