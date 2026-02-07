@@ -108,15 +108,16 @@ export default function Contact() {
 
             {/* Map */}
             <div className="bg-card border border-white/10 overflow-hidden">
-              <div className="h-64 w-full grayscale contrast-125 brightness-75">
+              <div className="h-64 w-full">
                 <iframe
                   title="Office Location Map"
-                  src="https://www.google.com/maps?q=232,2nd+Cross,Vidhana+Soudha+Layout,Papareddypalya,D-Group+Layout,2nd+Stage,Naagarabhaavi,Bengaluru,Karnataka+560072&z=19&output=embed"
+                  src="https://www.google.com/maps?q=12.9708391,77.5034595&z=19&output=embed"
                   width="100%"
                   height="100%"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                  className="[filter:none!important]"
+                />
               </div>
 
               <div className="p-4 border-t border-white/10">
