@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import Home from "@/pages/Home";
-import Home from "@/pages/ComingSoon";
+import ComingSoon from "@/pages/ComingSoon";
 import Services from "@/pages/Services";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
