@@ -88,7 +88,7 @@ export default function Contact() {
 
               <Info icon={<Phone className="w-5 h-5" />} title="Phone">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919019726464"
                   className="hover:text-white transition-colors"
                 >
                   +91 98765 43210
@@ -100,7 +100,7 @@ export default function Contact() {
                 title="WhatsApp"
               >
                 <a
-                  href="https://wa.me/919876543210?text=Hello%20PROTOREV%20team,%20I%20have%20an%20engineering%20requirement."
+                  href="https://wa.me/919019726464?text=Hello%20PROTOREV%20team,%20I%20have%20an%20engineering%20requirement."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#25D366] transition-colors font-medium"
@@ -111,10 +111,10 @@ export default function Contact() {
 
               <Info icon={<Mail className="w-5 h-5" />} title="Email">
                 <a
-                  href="mailto:projects@protorev.com"
+                  href="mailto:Info@protorev3d.com"
                   className="hover:text-white transition-colors"
                 >
-                  projects@protorev.com
+                  Info@protorev3d.com
                 </a>
               </Info>
             </div>
